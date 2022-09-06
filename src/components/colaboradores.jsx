@@ -64,48 +64,46 @@ const Colaboradores = () => {
             <Container>
                 <Row>
                     <Col>
-                        <div className='col-6'>
-                            <form>
-                                <InputGroup className="mb-3">
-                                    <InputGroup.Text id="basic-addon1">Nombre</InputGroup.Text>
-                                    <Form.Control
-                                        id="nombre" name='newColaborator' onChange={captureName}
-                                    />
-                                </InputGroup>
-                                <InputGroup className="mb-3">
-                                    <InputGroup.Text id="basic-addon1">Correo</InputGroup.Text>
-                                    <Form.Control
-                                        id="correo" name='newColaborator' onChange={captureCorreo}
-                                    />
-                                </InputGroup>
-                                <button onClick={enviarColaborador}>Agregar colaborador</button>
-                            </form>
-                            <p>-</p>
-                            <ul>
-                                {listaColaboradores.map(number =>
-                                    <li key={number["id"]}>Nombre: {number["nombre"]}
-                                        <p>{number["correo"]}</p>
-                                    </li>)}
-                            </ul>
-                        </div>
+                        <form>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text id="basic-addon1">Nombre</InputGroup.Text>
+                                <Form.Control
+                                    id="nombre" name='newColaborator' onChange={captureName}
+                                />
+                            </InputGroup>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text id="basic-addon1">Correo</InputGroup.Text>
+                                <Form.Control
+                                    id="correo" name='newColaborator' onChange={captureCorreo}
+                                />
+                            </InputGroup>
+                            <button onClick={enviarColaborador}>Agregar colaborador</button>
+                        </form>
+                        <p>-</p>
+                        <ul>
+                            {listaColaboradores.map(number =>
+                                <li key={number["id"]}>Nombre: {number["nombre"]}
+                                    <p>{number["correo"]}</p>
+                                </li>)}
+                        </ul>
                     </Col>
                     <Col>
-                        <div className='col-6'>
-                            <p>
-                                Search:
-                                <input id='search'
-                                    placeholder='Búsqueda por nombre o correo'
-                                    onChange={handleChange}></input>
-                            </p>
-                            <div>
-                                <ul>
-                                    {busqueda.map(col =>
-                                        <li>{col["nombre"]}
-                                            <p> {col["correo"]}</p></li>
+                        <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
+                            <Form.Control
+                                id='search'
+                                placeholder='nombre o correo'
+                                onChange={handleChange}
+                            />
+                        </InputGroup>
+                        <div>
+                            <ul>
+                                {busqueda.map(col =>
+                                    <li>{col["nombre"]}
+                                        <p> {col["correo"]}</p></li>
 
-                                    )}
-                                </ul>
-                            </div>
+                                )}
+                            </ul>
                         </div>
                     </Col>
                 </Row>
