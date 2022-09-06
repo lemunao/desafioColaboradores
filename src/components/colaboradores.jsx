@@ -78,8 +78,7 @@ const Colaboradores = () => {
                                 />
                             </InputGroup>
                             <button onClick={enviarColaborador}>Agregar colaborador</button>
-                        </form>
-                        <p>-</p>
+                        </form>                        
                         <ul>
                             {listaColaboradores.map(number =>
                                 <li key={number["id"]}>Nombre: {number["nombre"]}
