@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Form from 'react-bootstrap/Form';
 
 
 const Colaboradores = () => {
@@ -64,8 +66,18 @@ const Colaboradores = () => {
                     <Col>
                         <div className='col-6'>
                             <form>
-                                <p> Nombre colaborador: <input id="nombre" name='newColaborator' onChange={captureName}></input></p>
-                                <p> Correo colaborador: <input id="correo" name='newColaborator' onChange={captureCorreo}></input></p>
+                                <InputGroup className="mb-3">
+                                    <InputGroup.Text id="basic-addon1">Nombre</InputGroup.Text>
+                                    <Form.Control
+                                        id="nombre" name='newColaborator' onChange={captureName}
+                                    />
+                                </InputGroup>
+                                <InputGroup className="mb-3">
+                                    <InputGroup.Text id="basic-addon1">Correo</InputGroup.Text>
+                                    <Form.Control
+                                        id="correo" name='newColaborator' onChange={captureCorreo}
+                                    />
+                                </InputGroup>
                                 <button onClick={enviarColaborador}>Agregar colaborador</button>
                             </form>
                             <p>-</p>
